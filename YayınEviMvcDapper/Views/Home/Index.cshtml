@@ -1,0 +1,45 @@
+﻿@model IEnumerable<YayınEviMvcDapper.Models.HomeModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KitapAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YayinEviAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KitapAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KategoriAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YazarAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YayinEviAdi)
+        </td>
+        
+    </tr>
+}
+
+</table>

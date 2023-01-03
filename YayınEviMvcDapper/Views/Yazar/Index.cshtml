@@ -1,0 +1,39 @@
+﻿@model IEnumerable<YayınEviMvcDapper.Models.YazarModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YazarTür)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YazarAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YazarTür)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "EY", new { id = item.YazarNo }) |
+
+            @Html.ActionLink("Sil", "Delete", new { id = item.YazarNo })
+        </td>
+    </tr>
+}
+
+</table>
